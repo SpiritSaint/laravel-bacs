@@ -13,7 +13,7 @@ use OpenApi\Attributes as OA;
 class IndexController
 {
     #[OA\Get(path: '/api/bacs', parameters: [
-        new OA\Parameter(name: "serial_number", in: "query", required: false, schema: new OA\Schema(
+        new OA\Parameter(name: "serial_number", in: "query", required: true, schema: new OA\Schema(
             description: "Must be a 6 alphanumeric characters.",
             type: "string"
         )),

@@ -11,6 +11,14 @@ composer require spiritsaint/laravel-bacs
 - Laravel 10 or higher
 - PHP 8.1 or higher
 
+# Usage
+
+This package will provide `/api/bacs` endpoint. 
+
+Only `GET` requests are acceptable, `serial_number` and `sun` or `marker` are required params.
+
+For fast payments, use his parameter as true, otherwise you should define the `creation_date` and `expiration_date`.
+
 # OpenAPI
 
 In order to walk through the API you should view the documentation using [Swagger Editor](https://editor.swagger.io/):
@@ -28,7 +36,7 @@ paths:
         -
           name: serial_number
           in: query
-          required: false
+          required: true
           schema:
             description: 'Must be a 6 alphanumeric characters.'
             type: string
