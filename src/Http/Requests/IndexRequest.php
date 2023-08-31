@@ -42,14 +42,21 @@ class IndexRequest extends FormRequest
                 'size:2',
             ],
             'creation_date' => [
-                'nullable',
+                Rule::requiredIf(
+                    fn() => !$this->has('fast_payment')
+                ),
                 'date_format:Y-m-d'
             ],
             'expiration_date' => [
-                'nullable',
+                Rule::requiredIf(
+                    fn() => !$this->has('fast_payment')
+                ),
                 'date_format:Y-m-d'
             ],
-            'fast_payment' => ['required', 'boolean']
+            'fast_payment' => [
+                'required',
+                'boolean'
+            ]
         ];
     }
 }
