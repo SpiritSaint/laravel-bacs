@@ -1,0 +1,16 @@
+{
+    "name": "spiritsaint/laravel-bacs",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Spiritsaint\\LaravelBacs\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ian Torres",
+            "email": "iantorres@outlook.com"
+        }
+    ],
+    "require": {}
+}
