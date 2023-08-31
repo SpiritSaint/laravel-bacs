@@ -1,5 +1,16 @@
 # Installation
 
+Executes the following command to install the package in your laravel project.
+
+```
+composer require spiritsaint/laravel-bacs
+```
+
+# Requirements
+
+- Laravel 10 or higher
+- PHP 8.1 or higher
+
 # OpenAPI
 
 In order to walk through the API you should view the documentation using [Swagger Editor](https://editor.swagger.io/):
