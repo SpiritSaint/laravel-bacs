@@ -4,7 +4,7 @@ namespace SpiritSaint\LaravelBacs\Providers;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
-class LaravelBacsServiceProvider extends BaseServiceProvider
+class ServiceProvider extends BaseServiceProvider
 {
     public function boot(): void
     {
