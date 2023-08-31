@@ -95,4 +95,4 @@ paths:
       responses:
         '200':
           description: Success
-``
+```
