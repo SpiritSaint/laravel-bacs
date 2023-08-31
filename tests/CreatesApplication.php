@@ -6,13 +6,6 @@ namespace Tests;
 
 trait CreatesApplication
 {
-    public function setUp()
-    {
-        parent::setUp();
-        $this->artisan('migrate', ['--database' => 'sqlite']);
-        $this->loadLaravelMigrations(['--database' => 'sqlite']);
-        $this->withFactories(__DIR__ . '/factories');
-    }
 
     /**
      * Creates the application.
@@ -21,15 +14,15 @@ trait CreatesApplication
      *
      * @return \Illuminate\Foundation\Application
      */
-    public function createApplication()
+    public function createApplication(): \Illuminate\Foundation\Application
     {
         $app = parent::createApplication();
 
         return $app;
     }
 
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
-        return ['SpiritSaint\LaravelBacs\ServiceProvider'];
+        return ['SpiritSaint\LaravelBacs\Providers\ServiceProvider'];
     }
 }
