@@ -13,11 +13,13 @@ composer require spiritsaint/laravel-bacs
 
 # Usage
 
-This package will provide `/api/bacs` endpoint. 
+This package will provide `/api/bacs` endpoint. `Accept` header with value `application/json` is mandatory.
 
 Only `GET` requests are acceptable, `serial_number` and `sun` or `marker` are required params.
 
 For fast payments, use his parameter as true, otherwise you should define the `creation_date` and `expiration_date`.
+
+Creation date can be today or a future day. Expiration date must be after Creation date.
 
 # OpenAPI
 
