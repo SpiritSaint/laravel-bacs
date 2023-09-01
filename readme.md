@@ -94,6 +94,14 @@ paths:
           schema:
             description: "Must be a date in format Y-m-d and explicit defined if fast_payment isn't defined. (ie: 2023-12-03)"
             type: string
+        -
+          name: Accept
+          in: header
+          required: true
+          schema:
+            description: 'Must be application/json'
+            type: string
+            default: application/json
       responses:
         '200':
           description: Success
