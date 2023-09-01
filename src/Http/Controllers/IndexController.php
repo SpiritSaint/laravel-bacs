@@ -46,6 +46,11 @@ class IndexController
             description: "Must be a date in format Y-m-d and explicit defined if fast_payment isn't defined. (ie: 2023-12-03)",
             type: "string",
         )),
+        new OA\Parameter(name: "Accept", in: "header", required: true, schema: new OA\Schema(
+            description: "Must be application/json",
+            type: "string",
+            default: "application/json"
+        )),
     ])]
     #[OA\Response(response: '200', description: 'Success')]
     public function __invoke(IndexRequest $request) {
