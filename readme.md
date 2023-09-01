@@ -13,13 +13,15 @@ composer require spiritsaint/laravel-bacs:dev-master
 
 # Usage
 
-This package will provide `/api/bacs` endpoint. `Accept` header with value `application/json` is mandatory.
+After installation the package will register the `/api/bacs` endpoint. `php artisan serve can be used`
 
 Only `GET` requests are acceptable, `serial_number` and `sun` or `marker` are required params.
 
 For fast payments, use his parameter as true, otherwise you should define the `creation_date` and `expiration_date`.
 
 Creation date can be today or a future day. Expiration date must be after Creation date.
+
+`Accept` header with value `application/json` is mandatory.
 
 # OpenAPI
 
@@ -30,6 +32,8 @@ openapi: 3.0.0
 info:
   title: 'BACS - Swagger Documentation'
   version: 1.0.0
+servers:
+  - url: http://localhost:8000
 paths:
   /api/bacs:
     get:
@@ -105,4 +109,6 @@ paths:
       responses:
         '200':
           description: Success
+          content:
+                application/json: {}
 ```

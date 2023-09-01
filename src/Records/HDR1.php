@@ -10,7 +10,7 @@ class HDR1
 {
     public static function fromRequest(Request $request)
     {
-        if ($request->input('fast_payment')) {
+        if (!$request->has('creation_date') || !$request->has('expiration_date') || !$request->has('fast_payment') || ($request->has('fast_payment') && (string) $request->input('fast_payment') == "1")) {
             $creation_date = now();
             $expiration_date = now();
         } else {
