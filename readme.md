@@ -3,7 +3,7 @@
 Executes the following command to install the package in your laravel project.
 
 ```
-composer require spiritsaint/laravel-bacs
+composer require spiritsaint/laravel-bacs:dev-master
 ```
 
 # Requirements
