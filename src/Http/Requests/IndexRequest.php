@@ -45,13 +45,15 @@ class IndexRequest extends FormRequest
                 Rule::requiredIf(
                     fn() => !$this->has('fast_payment')
                 ),
-                'date_format:Y-m-d'
+                'date_format:Y-m-d',
+                'after:yesterday',
             ],
             'expiration_date' => [
                 Rule::requiredIf(
                     fn() => !$this->has('fast_payment')
                 ),
-                'date_format:Y-m-d'
+                'date_format:Y-m-d',
+                'after:creation_date',
             ],
             'fast_payment' => [
                 'required',
